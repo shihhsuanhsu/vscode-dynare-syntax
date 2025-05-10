@@ -1,0 +1,50 @@
+{
+    "name": "dynare-syntax",
+    "displayName": "Dynare Syntax Highlighting",
+    "description": "Syntax Highlighting for Dynare",
+    "version": "0.0.4",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "dynare",
+                "aliases": [
+                    "Dynare",
+                    "dynare"
+                ],
+                "extensions": [
+                    ".mod"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dynare",
+                "scopeName": "source.dynare",
+                "path": "./syntaxes/dynare.tmLanguage.json"
+            }
+        ],
+        "configuration": {
+            "title": "Dynare",
+            "properties": {
+                "files.associations": {
+                    "type": "object",
+                    "default": {
+                        "*.mod": "dynare"
+                    },
+                    "description": "Configure file associations for Dynare files",
+                    "scope": "language-overridable"
+                }
+            }
+        }
+    },
+    "__metadata": {
+        "size": 49767
+    }
+}

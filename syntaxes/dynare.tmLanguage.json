@@ -1,0 +1,182 @@
+{
+    "name": "Dynare with MATLAB",
+    "scopeName": "source.dynare",
+    "fileTypes": ["mod", "dyn"],
+    "repository": {
+        "matlab-keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.flow.matlab",
+                    "match": "\\b(if|else|elseif|for|while|break|continue|switch|case|otherwise|try|catch|return|global|persistent|parfor)\\b"
+                },
+                {
+                    "name": "storage.type.matlab",
+                    "match": "\\b(function|classdef|properties|methods|events|enumeration)\\b"
+                },
+                {
+                    "name": "keyword.operator.matlab",
+                    "match": "\\.\\*|\\.\\^|\\.\\/|\\.\\\\|\\.'"
+                },
+                {
+                    "name": "support.function.matlab.core",
+                    "match": "\\b(disp|fprintf|sprintf|input|error|warning|assert|nargin|nargout|varargin|varargout)\\b"
+                },
+                {
+                    "name": "support.function.matlab.graphics",
+                    "match": "\\b(figure|plot|scatter|bar|histogram|pie|area|contour|mesh|surf|imshow|imagesc|colorbar|colormap|title|xlabel|ylabel|zlabel|legend|grid|hold|clf|cla|close|saveas|print)\\b"
+                },
+                {
+                    "name": "support.function.matlab.array",
+                    "match": "\\b(zeros|ones|eye|rand|randn|randi|size|length|numel|ndims|reshape|repmat|permute|shiftdim|squeeze|flip|fliplr|flipud|rot90|transpose|ctranspose)\\b"
+                },
+                {
+                    "name": "support.function.matlab.types",
+                    "match": "\\b(cast|class|isa|isnumeric|islogical|ischar|isstring|iscell|isstruct|istable|double|single|int8|int16|int32|int64|uint8|uint16|uint32|uint64|logical|char|string|cell|struct|table|num2str|str2num|str2double)\\b"
+                },
+                {
+                    "name": "support.function.matlab.fileio",
+                    "match": "\\b(fopen|fclose|fread|fwrite|fprintf|fscanf|fgetl|fgets|load|save|readtable|writetable|importdata|textscan|dlmread|dlmwrite|csvread|csvwrite|xlsread|xlswrite)\\b"
+                },
+                {
+                    "name": "support.function.matlab.math",
+                    "match": "\\b(sum|mean|median|std|var|cov|corr|min|max|sort|sortrows|diff|gradient|cumsum|cumprod|trapz|interp1|interp2|spline|polyfit|polyval|roots|eig|svd|inv|det|norm|rank|null|ode45|ode23|fft|ifft)\\b"
+                },
+                {
+                    "name": "constant.language.matlab",
+                    "match": "\\b(true|false|NaN|Inf|i|j|eps|realmax|realmin|intmax|intmin)\\b"
+                },
+                {
+                    "name": "variable.other.property.matlab",
+                    "match": "(?<=\\.)[A-Za-z][A-Za-z0-9_]*\\b"
+                },
+                {
+                    "name": "punctuation.section.cell.matlab",
+                    "match": "^%%.*$"
+                },
+                {
+                    "name": "punctuation.section.cell.line.matlab",
+                    "match": "^%[^%].*$"
+                },
+                {
+                    "name": "meta.bracket.cell.matlab",
+                    "match": "{|}"
+                },
+                {
+                    "name": "keyword.operator.colon.matlab",
+                    "match": ":"
+                },
+                {
+                    "name": "keyword.operator.transpose.matlab",
+                    "match": "'"
+                },
+                {
+                    "name": "keyword.operator.logical.matlab",
+                    "match": "&&|\\|\\||~"
+                },
+                {
+                    "name": "keyword.operator.comparison.matlab",
+                    "match": "==|~=|>=|<=|>|<"
+                }
+            ]
+        },
+        "dynare-keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.dynare",
+                    "match": "\\b(var|varexo|parameters|model|initval|endval|shocks|steady|check|simul|stoch_simul|estimation|forecast)\\b"
+                },
+                {
+                    "name": "keyword.control.special_characters",
+                    "match": "#"
+                },
+                {
+                    "name": "keyword.operator.dynare",
+                    "match": "\\b(log|exp|sin|cos|tan|asin|acos|atan|sqrt|abs|sign|max|min|normcdf|normpdf)\\b"
+                },
+                {
+                    "name": "keyword.other.dynare",
+                    "match": "\\b(linear|periods|datafile|first_obs|last_obs|nobs|prefilter|loglinear|plot|noprint)\\b"
+                },
+                {
+                    "name": "storage.type.dynare",
+                    "match": "\\b(var|varexo|parameters|trend_var|predetermined_variables|model_diagnostics|model_info)\\b"
+                },
+                {
+                    "name": "support.function.dynare",
+                    "match": "\\b(steady_state|expectation|diff|growth_factor|stderr|corr|mode_file|mh_replic|conf_sig)\\b"
+                },
+                {
+                    "name": "variable.language.dynare",
+                    "match": "\\$(\\{[^}]*\\}|[^\\s;]*)\\b"
+                },
+                {
+                    "name": "keyword.control.block.dynare",
+                    "match": "\\b(model|initval|endval|shocks|steady_state_model|estimation|varobs|observation_trends|estimated_params|estimated_params_init|estimated_params_bounds|osr_params|osr_params_bounds|deterministic_trends|svar_identification|moment_calibration|irf_calibration)\\b"
+                },
+                {
+                    "name": "keyword.control.end.dynare",
+                    "match": "\\bend\\b"
+                }
+            ]
+        }
+    },
+    "patterns": [
+        {
+            "include": "#dynare-keywords"
+        },
+        {
+            "include": "#matlab-keywords"
+        },
+        {
+            "name": "string.quoted.double.dynare",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.dynare",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        {
+            "name": "string.quoted.single.dynare",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.dynare",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        {
+            "name": "comment.line.double-slash.dynare",
+            "match": "//.*$"
+        },
+        {
+            "name": "comment.line.percent.dynare",
+            "match": "%.*$"
+        },
+        {
+            "name": "comment.block.dynare",
+            "begin": "/\\*",
+            "end": "\\*/"
+        },
+        {
+            "name": "constant.numeric.dynare",
+            "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+        },
+        {
+            "name": "variable.parameter.dynare",
+            "match": "\\b[A-Za-z][A-Za-z0-9_]*\\b"
+        },
+        {
+            "name": "keyword.operator.symbolic.dynare",
+            "match": "[=\\+\\-\\*\\/\\^<>\\(\\)\\[\\]\\{\\};,]"
+        },
+        {
+            "name": "constant.language.dynare",
+            "match": "\\b(inf|nan|pi|TRUE|FALSE)\\b"
+        }
+    ]
+}
