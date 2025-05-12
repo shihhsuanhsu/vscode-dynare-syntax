@@ -1,11 +1,12 @@
 {
     "name": "dynare-syntax",
-    "displayName": "Dynare Syntax Highlighting",
+    "displayName": "Dynare Syntax",
     "description": "Syntax Highlighting for Dynare",
     "version": "0.0.4",
     "engines": {
         "vscode": "^1.95.0"
     },
+    "publisher": "shsu",
     "categories": [
         "Programming Languages"
     ],
@@ -44,7 +45,11 @@
             }
         }
     },
-    "__metadata": {
-        "size": 49767
+    "bugs": {
+        "url": "https://github.com/shihhsuanhsu/vscode-dynare-syntax/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shihhsuanhsu/vscode-dynare-syntax"
     }
 }
