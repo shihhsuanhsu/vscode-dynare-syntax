@@ -2,7 +2,7 @@
     "name": "dynare-syntax",
     "displayName": "Dynare Syntax",
     "description": "Syntax Highlighting for Dynare",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "engines": {
         "vscode": "^1.95.0"
     },
