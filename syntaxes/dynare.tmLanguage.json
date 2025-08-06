@@ -6,6 +6,14 @@
         "matlab-keywords": {
             "patterns": [
                 {
+                    "name": "comment.line.banner.matlab",
+                    "match": "^%[=*\\-~\\*]{2,}.*$"
+                },
+                {
+                    "name": "comment.line.indented.percent.matlab",
+                    "match": "^%\\s*.+$"
+                },
+                {
                     "name": "keyword.control.flow.matlab",
                     "match": "\\b(if|else|elseif|for|while|break|continue|switch|case|otherwise|try|catch|return|global|persistent|parfor)\\b"
                 },
@@ -48,14 +56,6 @@
                 {
                     "name": "variable.other.property.matlab",
                     "match": "(?<=\\.)[A-Za-z][A-Za-z0-9_]*\\b"
-                },
-                {
-                    "name": "punctuation.section.cell.matlab",
-                    "match": "^%%.*$"
-                },
-                {
-                    "name": "punctuation.section.cell.line.matlab",
-                    "match": "^%[^%].*$"
                 },
                 {
                     "name": "meta.bracket.cell.matlab",
